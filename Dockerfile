@@ -4,9 +4,9 @@ RUN useradd -m myuser
 
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt app.py ./
 
-RUN pip install Flask
+RUN pip install --no-cache-dir -r requirements.txt
 
 RUN chown -R myuser:myuser /app
 
